@@ -155,3 +155,10 @@ with hourly_sale as (
 from hourly_sale
 group by shifts;
 ```
+
+## Findings
+
+- **Customer Demographics:** The dataset captures a diverse range of customer age groups, with sales spanning multiple categories, including Clothing and Beauty.
+- **High-Value Transactions:** A notable number of transactions exceed a total sale amount of 1000, indicating a trend of premium or high-value purchases.
+- **Sales Trends:** A monthly sales analysis reveals fluctuations in sales, helping to identify peak periods of high demand.
+- **Customer Insights:** The analysis highlights the top-spending customers and the most popular product categories, offering valuable insights into customer preferences.
