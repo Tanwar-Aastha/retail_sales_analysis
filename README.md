@@ -20,10 +20,20 @@ This dataset was used to perform a retail sales analysis using MySQL to derive i
 ## Objectives
 
 1. **Data Cleaning**: Identify and remove any records with missing or null values.
-2. **Exploratory Data Analysis (EDA)**: Perform basic exploratory data analysis to understand the dataset.
-3. **Business Analysis**: Use SQL to answer specific business questions and derive insights from the sales data.
+2. **Exploratory Data Analysis (EDA)**: Perform basic exploratory data analysis to understand the dataset along with the key trends and patterns in the data.
+3. **Business Analysis**: Use SQL to answer specific business questions related to sales trends, customer demographics, and product categories.
 
-## Project Structure
+## Executive Summary
+
+The analysis revealed key insights into sales performance and customer behavior:
+
+- Peak Sales Periods: Certain months emerged as peak periods for sales.
+- Customer Behavior: High-value customers and top-selling categories were identified.
+- Category Insights: Categories like Clothing and Beauty were consistently popular.
+- High-Value Transactions: A significant number of transactions had high total sales, indicating opportunities for upselling or premium product marketing.
+These findings provide actionable insights for optimizing inventory management, marketing strategies, and customer engagement.
+
+## Detailed Results
 
 ### 1. Data Exploration and Cleaning
 
@@ -64,22 +74,22 @@ where
     quantiy is null or price_per_unit is null or cogs IS NULL;
 ```
 
-### Data Analysis & Finding
+### Key Business Insights
 
 The following SQL queries were developed to answer specific business questions:
 
-1. **Write a SQL query to find the total sales per year**
+1. **Total sales per year**
 ```sql
 select year(sale_date) as year, count(total_sale) 
 from retail_sales_copy
 group by `year`; 
 ```
 
-2. **Write a SQL query to retrieve different types of categories present in the data**
+2. **Popular Product Categories**
 ```sql
 select distinct category from retail_sales_copy;
 ```
-3. **Write a SQL query to find the total sales made in each category**
+3. **Total sales made in each category**
 ```sql
 with categorical_sales as (
 select *,
@@ -88,33 +98,33 @@ from retail_sales_copy
 ) select distinct category, total_categorical_sales 
 from categorical_sales;
 ```
-4. **Write a SQL query to find all transactions where category id 'clothing' with highest quantity sold.**
+4. **Top Transactions in 'Clothing' Category**
 ```sql
 select category, max(quantiy), sum(total_sale) as total_sale
 from retail_sales_copy
 where category = 'Clothing'
 group by category;
 ```
-5. **Write a SQL query to find the average age of customers who purchased items from the 'Beauty' category.**
+5. **Customer Demographics by Category**
 ```sql
 select category, avg(age) as 'Average age' 
 from retail_sales_copy
 where category = 'Beauty';
 ```
-6. **Write a SQL query to find all transactions where the total_sale is greater than 1000.**
+6. **High-Value Transactions**
 ```sql
 select *
 from retail_sales_copy
 where total_sale > 1000;
 ```
-7. **Write a SQL query to find the total number of transactions (transaction_id) made by each gender in each category.**
+7. **Total number of transactions (transaction_id) made by each gender in each category.**
 ```sql
 select gender, category, count(*) as 'total_tranaction'
 from retail_sales_copy
 group by category, gender
 order by 1;
 ```
-8. **Write a SQL query to calculate the average sale for each month. Find out best selling month in each year.**
+8. **Monthly Sales Trends**
 ```sql
 select `year`, `month`, avg_sale
 from (
@@ -127,7 +137,7 @@ from (
 ) as t1
 where `rank` = 1;
 ```
-9. **Write a SQL query to find the top five customers based on  the highest total sales.**
+9. **Top-Spending Customers**
 ```sql
 select customer_id, sum(total_sale) as 'total_sales' 
 from retail_sales_copy
@@ -135,13 +145,13 @@ group by customer_id
 order by sum(total_sale) desc
 limit 5;
 ```
-10. **Write a SQL query to find the number of unique customers who purchased items from each category.**
+10. **Unique customers who purchased items from each category.**
 ```sql
 select category, count(distinct customer_id) as 'unique_customer_id'
 from retail_sales_copy
 group by category;
 ```
-11. **Write a SQL query to create each shift and number of orders (Example Morning <=12, Afternoon Between 12 & 17, Evening >17)**
+11. **Shift-Wise Sales Analysis**
 ```sql
 with hourly_sale as (
 	select *,
@@ -155,10 +165,23 @@ with hourly_sale as (
 from hourly_sale
 group by shifts;
 ```
-
 ## Findings
 
 - **Customer Demographics:** The dataset captures a diverse range of customer age groups, with sales spanning multiple categories, including Clothing and Beauty.
 - **High-Value Transactions:** A notable number of transactions exceed a total sale amount of 1000, indicating a trend of premium or high-value purchases.
 - **Sales Trends:** A monthly sales analysis reveals fluctuations in sales, helping to identify peak periods of high demand.
 - **Customer Insights:** The analysis highlights the top-spending customers and the most popular product categories, offering valuable insights into customer preferences.
+
+## Observations
+
+- Peak Sales Periods: Seasonal patterns and specific months contributed to spikes in sales.
+- Customer Preferences: Categories like Clothing and Beauty had consistent demand across demographics.
+- Premium Transactions: A notable proportion of transactions were high-value purchases.
+- Sales Shifts: Sales activity varied significantly across shifts.
+
+## Recommendations
+- Inventory Optimization: Increase stock levels for high-demand months and popular categories.
+- Targeted Marketing: Use demographic insights to tailor marketing strategies for specific age groups and categories.
+- Upselling Opportunities: Leverage high-value transaction data to promote premium product bundles.
+- Shift Planning: Optimize staffing and promotions during peak shifts to improve customer experience.
+
