@@ -1,4 +1,5 @@
-# Retail Sales Analysis
+# Retail Trends and Performance Analysis
+
 ## **Dataset Description: Retail Sales**
 This dataset contains retail sales transactions and was used to analyze sales performance and customer behavior. The dataset includes the following columns:
 
