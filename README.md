@@ -125,6 +125,10 @@ from retail_sales_copy
 group by category, gender
 order by 1;
 ```
+![image](https://github.com/user-attachments/assets/fe4676af-5c80-4097-8c0d-9e7ba009ab94)
+
+Males preferred Clothing and Electronics, showing higher transaction counts in these categories i.e 351 and 343. Whereas, females showed a strong preference for Beauty products, as they had more transactions (330) in this category compared to males (281).
+
 8. **Monthly Sales Trends**
 ```sql
 select `year`, `month`, avg_sale
