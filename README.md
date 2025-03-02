@@ -28,11 +28,11 @@ This dataset was used to perform a retail sales analysis using MySQL to derive i
 
 The analysis revealed key insights into sales performance and customer behavior:
 
-- Peak Sales Periods: Certain months emerged as peak periods for sales.
-- Customer Behavior: High-value customers and top-selling categories were identified.
-- Category Insights: Categories like Clothing and Beauty were consistently popular.
-- High-Value Transactions: A significant number of transactions had high total sales, indicating opportunities for upselling or premium product marketing.
-These findings provide actionable insights for optimizing inventory management, marketing strategies, and customer engagement.
+- Peak Sales Periods: Sales peaked during September to December, with the highest transactions recorded in December (55K) and September (50K+).
+- Customer Behavior: Identified high-value customers, with top contributors generating up to 38K in revenue.
+- Category Insights: Clothing and Beauty remained consistently popular, with Clothing leading in total sales (1,780) and Beauty in average sale price.
+- High-Value Transactions: The average order value is 457.09, with total revenue reaching 908K; peak sales occurred in December (55K) and September (50K+), indicating strong seasonal demand.
+Strategic Insights: These trends highlight opportunities for upselling, premium product marketing, and optimizing inventory for peak seasons to maximize profitability.
 
 ## Detailed Results
 
