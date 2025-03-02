@@ -170,7 +170,10 @@ group by shifts;
 ## Dashboard
 [Power BI Dashboard](https://app.powerbi.com/groups/me/reports/649a0b69-eac5-40d7-9af5-53c165fef653/b59393d0e90c01b34ed6?experience=power-bi)
 
-[Dashboard](./Retail_sales Dashboard.pdf)
+[View PDF](https://github.com/Tanwar-Aastha/retail_sales_analysis/blob/main/Retail_sales%20Dashboard.pdf)
+
+
+[Dashboard](Retail_sales Dashboard.pdf)
 
 
 ## Findings
