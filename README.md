@@ -125,9 +125,6 @@ from retail_sales_copy
 group by category, gender
 order by 1;
 ```
-![image](https://github.com/user-attachments/assets/fe4676af-5c80-4097-8c0d-9e7ba009ab94)
-
-Males preferred Clothing and Electronics, showing higher transaction counts in these categories i.e 351 and 343. Whereas, females showed a strong preference for Beauty products, as they had more transactions (330) in this category compared to males (281).
 
 8. **Monthly Sales Trends**
 ```sql
@@ -170,23 +167,26 @@ with hourly_sale as (
 from hourly_sale
 group by shifts;
 ```
+## Dashboard
+[Power BI Dashboard](https://app.powerbi.com/groups/me/reports/649a0b69-eac5-40d7-9af5-53c165fef653/b59393d0e90c01b34ed6?experience=power-bi)
+
 ## Findings
 
-- **Customer Demographics:** The dataset captures a diverse range of customer age groups, with sales spanning multiple categories, including Clothing and Beauty.
-- **High-Value Transactions:** A notable number of transactions exceed a total sale amount of 1000, indicating a trend of premium or high-value purchases.
-- **Sales Trends:** A monthly sales analysis reveals fluctuations in sales, helping to identify peak periods of high demand.
-- **Customer Insights:** The analysis highlights the top-spending customers and the most popular product categories, offering valuable insights into customer preferences.
+- Customer Demographics: Sales are distributed across various age groups, with significant contributions from both male and female customers.
+- High-Value Transactions: A considerable number of transactions exceed $1,000, indicating strong demand for premium products.
+- Sales Trends: Sales show steady growth throughout the year, with peak demand observed from September to December, reaching the highest in December (141K sales).
+- Customer Insights: Electronics, Clothing, and Beauty are the top-selling categories, with Electronics and Clothing leading in gross sales.
 
 ## Observations
 
-- Peak Sales Periods: Seasonal patterns and specific months contributed to spikes in sales.
-- Customer Preferences: Categories like Clothing and Beauty had consistent demand across demographics.
-- Premium Transactions: A notable proportion of transactions were high-value purchases.
-- Sales Shifts: Sales activity varied significantly across shifts.
+- Peak Sales Periods: September to December witnessed the highest revenue, with a sharp spike in September (129K sales) and consistent growth until December.
+- Customer Preferences: Clothing and Beauty categories showed consistent demand across all age groups and genders.
+- Premium Transactions: A notable proportion of transactions involved high-order values, with an average order value of $457.09.
+- Sales Shifts: Sales activity peaks in the evening hours, particularly around 15:00 to 21:00, indicating a key time for promotions and engagement.
 
 ## Recommendations
-- Inventory Optimization: Increase stock levels for high-demand months and popular categories.
-- Targeted Marketing: Use demographic insights to tailor marketing strategies for specific age groups and categories.
-- Upselling Opportunities: Leverage high-value transaction data to promote premium product bundles.
-- Shift Planning: Optimize staffing and promotions during peak shifts to improve customer experience.
+- Inventory Optimization: Increase stock levels for peak months (September–December) and prioritize top-selling categories.
+- Targeted Marketing: Leverage demographic insights to create personalized promotions for different age groups and preferences.
+- Upselling Strategies: Introduce premium bundles and cross-selling tactics to capitalize on high-value purchase trends.
+- Shift Planning: Align staffing, discounts, and marketing campaigns with peak shopping hours to maximize sales and customer satisfaction.
 
